@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html ng-app="tmApp">
+  <head>
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  </head>
+  <body ng-controller="tmMainCtrl">
+    <div class="container">
+    <div class="pull-right">
+      <span class="text-danger" ng-hide="selectedAccount">Select account</span>
+      <span class="text-success" ng-show="selectedAccount">{{selectedAccount.displayName}}</span>
+      <button ng-show="selectedAccount" ng-click="unselectAccount()" class="btn btn-danger btn-xs" type="button">Unselect</button>
+    </div>
+    <h1>Demo TaskManager Application</h1>
+      <tabset type="pills">
+        <tab heading="Accounts">
+          <div ng-controller="tmAccountCtrl">
+            <h2>Accounts</h2>
+            <form ng-submit="createAccount()">
+            <table class="table">
+              <tr>
+                <th>#</th>
+                <th>Display name</th>
+                <th>E-Mail</th>
+                <th>Password</th>
+                <th>Actions</th>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td><input type="text" class="form-control" ng-model="newDisplayName" /></td>
+                <td><input type="text" class="form-control" ng-model="newEmail" /></td>
+                <td><input type="text" class="form-control" ng-model="newPassword" /></td>
+                <td><button type="submit" class="btn btn-success">Create</button></td>
+              </tr>
+              <tr ng-repeat="account in accounts">
+                <td>{{account.id}}</td>
+                <td>{{account.displayName}}</td>
+                <td>{{account.email}}</td>
+                <td>{{account.password}}</td>
+                <td><button type="button" ng-click="selectAccount(account)" class="btn btn-primary btn-xs">Select</button> <button type="button" ng-click="deleteAccount(account)" class="btn btn-danger btn-xs">Delete</button></td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        </tab>
+        <tab heading="Categories" ng-show="selectedAccount">
+          <div ng-controller="tmCategoryCtrl">
+            <h2>Categories</h2>
+            <form ng-submit="createCategory()">
+            <table class="table">
+              <tr>
+                <th>#</th>
+                <th>Label</th>
+                <th>Hue</th>
+                <th>Actions</th>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td><input type="text" class="form-control" ng-model="newLabel" /></td>
+                <td><input type="number" class="form-control" ng-model="newHue" /></td>
+                <td><button type="submit" class="btn btn-success">Create</button></td>
+              </tr>
+              <tr ng-repeat="category in categories">
+                <td>{{category.id}}</td>
+                <td>{{category.label}}</td>
+                <td>{{category.hue}}</td>
+                <td><button type="button" ng-click="deleteCategory(category)" class="btn btn-danger btn-xs">Delete</button></td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        </tab>
+        <tab heading="Tasks" ng-show="selectedAccount">
+          <div ng-controller="tmTaskCtrl">
+            <h2>Tasks</h2>
+            <form ng-submit="createTask()">
+            <table class="table">
+              <tr>
+                <th>#</th>
+                <th>Category</th>
+                <th>Label</th>
+                <th>Description</th>
+                <th>Importance</th>
+                <th>Urgency</th>
+                <th>Actions</th>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td><select ng-options="category.label for category in categories" ng-model="newCategory" class="form-control"></select>
+                <td><input type="text" class="form-control" ng-model="newLabel" /></td>
+                <td><input type="text" class="form-control" ng-model="newDescription" /></td>
+                <td><input type="number" class="form-control" ng-model="newImportance" /></td>
+                <td><input type="number" class="form-control" ng-model="newUrgency" /></td>
+                <td><button type="submit" class="btn btn-success">Create</button></td>
+              </tr>
+              <tr ng-repeat="task in tasks">
+                <td>{{task.id}}</td>
+                <td>{{categoryFor(task)}}</td>
+                <td>{{task.label}}</td>
+                <td>{{task.description}}</td>
+                <td>{{task.importance}}</td>
+                <td>{{task.urgency}}</td>
+                <td><button type="button" ng-click="deleteTask(task)" class="btn btn-danger btn-xs">Delete</button></td>
+              </tr>
+            </table>
+            </form>
+          </div>
+        </tab>
+      </tabset>
+    </div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular-resource.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.11.2/ui-bootstrap-tpls.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</ihtml>
