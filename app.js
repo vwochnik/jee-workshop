@@ -1,51 +1,40 @@
 (function($, JSON, localStorage) {
   'use strict';
 
-  var store, $checkboxes, lastOpen;
+  var states = ['open', 'revision', 'closed'];
+  var classes = ['text-danger glyphicon-unchecked', 'text-warning glyphicon-edit', 'text-success glyphicon-check'];
 
   $(function() {
-    $('#accordion .panel:has(.task-checker)').each(function() {
+    $('.panel:has(.task-checker)').each(function() {
       var $panel = $(this),
-          $checker = $panel.find('.task-checker');
+          $checker = $panel.find('.task-checker'),
+          checkerId = $checker.attr('id');
 
-      function set(value) {
-          if ((value!=='open')&&(value!=='working')&&(value!=='closed'))
-              value = 'open';
-          $checker.data('value', value);
-          $checker.addClass('glyphicon')
-              .toggleClass('glyphicon-unchecked', (value==='open'))
-              .toggleClass('text-danger', (value==='open'))
-              .toggleClass('glyphicon-edit', (value==='working'))
-              .toggleClass('text-warning', (value==='working'))
-              .toggleClass('glyphicon-check', (value==='closed'))
-              .toggleClass('text-success', (value==='closed'));
-          return value;
+      function load() {
+        var state = states.indexOf(localStorage.getItem(checkerId));
+        if (state < 0) state = 0;
+        set(state);
       }
 
-      function save(value) {
-          localStorage.setItem($checker.attr('id'), set(value));
+      function set(state) {
+        $checker.data("state", state);
+        for (var i = 0; i < states.length; i++) {
+          $checker.addClass('glyphicon').toggleClass(classes[i], i===state);
+        }
+      }
+
+      function save(state) {
+        localStorage.setItem(checkerId, states[state]);
       }
 
       $checker.on('click', function() {
-          var value = $checker.data('value');
-          if (value==='open') { save('working'); }
-          else if (value==='working') { save('closed'); }
-          else { save('open'); }
+        var state = $checker.data('state');
+        state = (state + 1) % states.length;
+        set(state);
+        save(state);
       });
 
-      set(localStorage.getItem($checker.attr('id')));
+      load();
     });
-
-    $('#accordion .collapse').on('show.bs.collapse', function() {
-      lastOpen = '#'+$(this).attr('id');
-      localStorage.setItem('lastOpen', lastOpen);
-    });
-
-    if ((lastOpen = localStorage.getItem('lastOpen')) !== undefined) {
-      if (!$(lastOpen).hasClass('in')) {
-        $('#accordion .collapse').removeClass('in');
-        $(lastOpen).addClass('in');
-      }
-    }
   });
 })(jQuery, JSON, localStorage);
