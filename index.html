@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JEE Workshop</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <style type="text/css">.task-checker{cursor:pointer}</style>
+  </head>
+  <body style="background:#eee">
+    <div class="container">
+      <h1 class="page-header">Java Rest Workshop <small>Using RestEasy, Spring and JPA/Hibernate</small></h1>
+      <p class="lead">This website will guide you through the completion of the workshop. After completing a task, mark it as done by clicking on the box next to the title.</p>
+      <p class="well">Questions regarding the workshop can be asked at the time of the workshop or by emailing Vincent, Jens or Nils.</p>
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="accordion-intro-heading">
+            <a class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#accordion-intro">Introduction</a>
+          </div><!-- /.panel-heading -->
+          <div id="accordion-intro" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="accordion-intro-heading">
+            <div class="panel-body">
+              <h2>Introduction</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis beatae laboriosam amet sequi, tempore suscipit sapiente esse harum minima tenetur eligendi labore atque perferendis perspiciatis voluptatum, aut nam maxime necessitatibus?</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis beatae laboriosam amet sequi, tempore suscipit sapiente esse harum minima tenetur eligendi labore atque perferendis perspiciatis voluptatum, aut nam maxime necessitatibus?</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis beatae laboriosam amet sequi, tempore suscipit sapiente esse harum minima tenetur eligendi labore atque perferendis perspiciatis voluptatum, aut nam maxime necessitatibus?</p>
+            </div><!-- /.panel-body -->
+          </div><!-- /.panel-collapse -->
+        </div><!-- /.panel -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="accordion-task-1-heading">
+            <span class="task-checker" id="check-task-1"></span>
+            <a class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#accordion-task-1">1. Prerequisites</a>
+          </div><!-- /.panel-heading -->
+          <div id="accordion-task-1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-task-1-heading">
+            <div class="panel-body">
+              <h2>Prerequisites</h2>
+              <p>You have the choice to either use the provided virtual machine with all the requirements installed or to install them manually on your platform of choice.</p>
+              <h3>Virtual Machine</h3>
+              <p><a href="#" target="_blank">Download</a> the virtual machine and then import it using either <a href="https://virtualbox.org/" target="_blank" title="VirtualBox">VirtualBox</a> or the virtualization software of your choice.</p>
+              <h3>Native Installation</h3>
+              <p>In order to take part in our workshop, make sure to have the following requirements set up before starting the workshop.</p>
+              <ol>
+                <li><p><strong><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" title="Oracle JDK 8">Oracle JDK 8</a> Java Development Kit</strong></p>
+                <p>A recent version of Java is required for the project to run without problems.</p></li>
+                <li><p><strong><a href="https://netbeans.org/downloads/" target="_blank" title="NetBeans 8">NetBeans 8</a> Integrated Development Environment</strong></p>
+                <p>NetBeans is the preferred IDE to use for this workshop, but you can of course use a different one.</p></li>
+                <li><p><strong><a href="http://maven.apache.org/" target="_blank" title="Apache Maven">Apache Maven</a></strong></p>
+                <p>Maven is used to simplify the build process tremendously.</p></li>
+                <li><p><strong><a href="http://wildfly.org/downloads/" target="_blank" title="Wildfly 8.1.0 Final">Wildfly 8.1.0 Final</a> Application Server</strong></p>
+                <p>Wildfly is the application server for which the example application used in this workshop has been developed. It is highly recommended to stick to this server. After the installation, you have to <a href="http://blog.arungupta.me/2013/12/netbeans8-and-wildfly8-techtip-6/" target="_blank" title="NetBeans 8 and Wildfly 8">configure NetBeans to use Wildfly</a>.</p></li>
+                <li><p><strong>Check out our <a href="#" target="_blank">GitHub repository</a></strong></p>
+                <p>The repository contains the example application for this workshop.</p></li>
+              </ol>
+            </div><!-- /.panel-body -->
+          </div><!-- /.panel-collapse -->
+        </div><!-- /.panel -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="accordion-task-2-heading">
+            <span class="task-checker" id="check-task-2"></span>
+            <a class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#accordion-task-2">2. Getting Started</a>
+          </div><!-- /.panel-heading -->
+          <div id="accordion-task-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-task-2-heading">
+            <div class="panel-body">
+              <h2>Getting Started</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis beatae laboriosam amet sequi, tempore suscipit sapiente esse harum minima tenetur eligendi labore atque perferendis perspiciatis voluptatum, aut nam maxime necessitatibus?</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis beatae laboriosam amet sequi, tempore suscipit sapiente esse harum minima tenetur eligendi labore atque perferendis perspiciatis voluptatum, aut nam maxime necessitatibus?</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis beatae laboriosam amet sequi, tempore suscipit sapiente esse harum minima tenetur eligendi labore atque perferendis perspiciatis voluptatum, aut nam maxime necessitatibus?</p>
+            <span class="glyphicon glyphicon-ok"></span>
+            </div><!-- /.panel-body -->
+          </div><!-- /.panel-collapse -->
+        </div><!-- /.panel -->
+      </div><!-- /.panel-group -->
+      <div class="clearfix">
+        <ul class="list-inline pull-right">
+          <li><span class="glyphicon glyphicon-unchecked text-danger"></span> Open task</li>
+          <li><span class="glyphicon glyphicon-edit text-warning"></span> Task in progress</li>
+          <li><span class="glyphicon glyphicon-check text-success"></span> Closed task</li>
+        </ul><!-- /.list-inline -->
+      </div><!-- /.clearfix -->
+      <p class="text-center text-muted">
+        <small>Copyright &copy; Vincent Wochnik 2014. All rights reserved.</small>
+      </p><!-- /.text-center -->
+    </div><!-- /.container -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</ihtml>
