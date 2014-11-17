@@ -2,12 +2,12 @@
   'use strict';
 
   var states = ['open', 'revision', 'closed'];
-  var classes = ['text-danger glyphicon-unchecked', 'text-warning glyphicon-edit', 'text-success glyphicon-check'];
+  var classes = ['text-danger glyphicon glyphicon-unchecked', 'text-warning glyphicon glyphicon-edit', 'text-success glyphicon glyphicon-check'];
 
   $(function() {
-    $('.panel:has(.task-checker)').each(function() {
+    $('.panel:has(button.task-checker)').each(function() {
       var $panel = $(this),
-          $checker = $panel.find('.task-checker'),
+          $checker = $panel.find('button.task-checker'),
           checkerId = $checker.attr('id');
 
       function load() {
@@ -18,9 +18,7 @@
 
       function set(state) {
         $checker.data("state", state);
-        for (var i = 0; i < states.length; i++) {
-          $checker.addClass('glyphicon').toggleClass(classes[i], i===state);
-        }
+        $checker.empty().append($('<span/>').addClass(classes[state]));
       }
 
       function save(state) {
