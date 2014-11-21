@@ -89,25 +89,12 @@ public class CategoryService {
     }
     
     private CategoryRepresentation representation(Category category) {
-        CategoryRepresentation result = new CategoryRepresentation();
-        ObjectReferenceRepresentation accountRepr = new ObjectReferenceRepresentation();
-        
-        accountRepr.setId(category.getAccount().getId());
-        result.setId(category.getId());
-        result.setAccount(accountRepr);
-        result.setLabel(category.getLabel());
-        result.setHue(category.getHue());
-        
-        return result;
+        //TODO: implement
+        return null;
     }
     
     private Category model(CategoryRepresentation repr) {
-        Category category = new Category();
-
-        category.setAccount(accountRepository.findOne(repr.getAccount().getId()));
-        category.setLabel(repr.getLabel());
-        category.setHue(repr.getHue());
-        
-        return category;
+        //TODO: implement
+        return null;
     }
 }
