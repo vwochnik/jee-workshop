@@ -40,17 +40,8 @@ public class TaskService {
     private CategoryRepository categoryRepository;
     
     public List<TaskRepresentation> getAll(Long accountId) {
-        List<TaskRepresentation> resultList = new ArrayList<TaskRepresentation>();
-        
-        Account account = accountRepository.findOne(accountId);
-        if (account == null)
-            throw new InvalidQueryException("Account ID not found.");
-
-        for (Task task : taskRepository.findByAccount(account)) {
-            resultList.add(representation(task));
-        }
-        
-        return resultList;
+        //TODO: implement
+        return null;
     }
     
     public TaskRepresentation get(Long id) {

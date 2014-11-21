@@ -47,7 +47,8 @@ public class TaskResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Transactional(readOnly = true)
     public List<TaskRepresentation> findAll(@QueryParam("accountId") long accountId) {
-        return taskService.getAll(accountId);
+        //TODO: implement
+        return null;
     }
 
     @POST
