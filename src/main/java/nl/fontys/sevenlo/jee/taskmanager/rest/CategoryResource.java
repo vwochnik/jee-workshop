@@ -39,7 +39,8 @@ public class CategoryResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Transactional(readOnly = true)
     public CategoryRepresentation find(@PathParam("id") long id) {
-        return categoryService.get(id);
+        //TODO: implement
+        return null;
     }
 
 

@@ -49,11 +49,8 @@ public class CategoryService {
     }
     
     public CategoryRepresentation get(Long id) {
-        Category category = categoryRepository.getOne(id);
-        if (category == null)
-            throw new ResourceNotFoundException("Category ID not found.");
-
-        return representation(category);
+        //TODO: implement
+        return null;
     }
     
     public CategoryRepresentation create(CategoryRepresentation repr) {
