@@ -64,7 +64,8 @@ public class TaskResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Transactional(readOnly = false)
     public TaskRepresentation update(@PathParam("id") long id, TaskRepresentation task) {
-        return taskService.update(id, task);
+        //TODO: implement
+        return null;
     }
 
     @DELETE

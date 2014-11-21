@@ -79,21 +79,8 @@ public class TaskService {
     }
     
     public TaskRepresentation update(Long id, TaskRepresentation repr) {
-        if ((repr.getId() != null) && (!repr.getId().equals(id)))
-            throw new InvalidRepresentationException("Resource ID does not match resource URI.");
-
-        Task task = model(repr);
-        task.setId(id);
-        if (task.getAccount() == null)
-            throw new InvalidRepresentationException("Invalid account ID specified.");
-        if (task.getCategory()== null)
-            throw new InvalidRepresentationException("Invalid category ID specified.");
-
-        task = taskRepository.save(task);
-        if (task == null)
-            throw new DatabaseException("Task could not be updated.");
-
-        return representation(task);
+        //TODO: implement
+        return null;
     }
     
     public void delete(Long id) {
