@@ -32,8 +32,6 @@ public class ResourceExceptionMapper implements ExceptionMapper<ResourceExceptio
             this.exception = exception;
         }
         
-        public String getMessage() {
-            return exception.getMessage();
-        }
+        //TODO: implement json serialization getter
     }
 }
