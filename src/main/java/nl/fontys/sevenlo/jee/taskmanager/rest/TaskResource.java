@@ -71,6 +71,6 @@ public class TaskResource {
     @Path("/{id}")
     @Transactional(readOnly = false)
     public void delete(@PathParam("id") long id) {
-        taskService.delete(id);
+        //TODO: implement
     }
 }

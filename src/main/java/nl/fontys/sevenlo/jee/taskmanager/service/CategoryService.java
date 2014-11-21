@@ -88,7 +88,7 @@ public class CategoryService {
     }
     
     public void delete(Long id) {
-        categoryRepository.delete(id);
+        //TODO: implement
     }
     
     private CategoryRepresentation representation(Category category) {

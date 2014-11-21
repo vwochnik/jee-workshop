@@ -71,6 +71,6 @@ public class CategoryResource {
     @Path("/{id}")
     @Transactional(readOnly = false)
     public void delete(@PathParam("id") long id) {
-        categoryService.delete(id);
+        //TODO: implement
     }
 }

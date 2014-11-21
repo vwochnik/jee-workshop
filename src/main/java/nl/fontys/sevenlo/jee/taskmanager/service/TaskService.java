@@ -97,7 +97,7 @@ public class TaskService {
     }
     
     public void delete(Long id) {
-        taskRepository.delete(id);
+        //TODO: implement
     }
     
     private TaskRepresentation representation(Task task) {
