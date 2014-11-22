@@ -20,16 +20,15 @@
             <div class="panel-body">
               <h2>Introduction</h2>
               <img class="img-responsive pull-right" src="web-app-stack.png" srcset="web-app-stack.png 1x, web-app-stack-2x.png 2x" alt="Web Application Stack" />
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis beatae laboriosam amet sequi, tempore suscipit sapiente esse harum minima tenetur eligendi labore atque perferendis perspiciatis voluptatum, aut nam maxime necessitatibus?</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis beatae laboriosam amet sequi, tempore suscipit sapiente esse harum minima tenetur eligendi labore atque perferendis perspiciatis voluptatum, aut nam maxime necessitatibus?</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis beatae laboriosam amet sequi, tempore suscipit sapiente esse harum minima tenetur eligendi labore atque perferendis perspiciatis voluptatum, aut nam maxime necessitatibus?</p>
+              <p>This workshop shows how to implement a REST-based web application using Spring with Hibernate and RestEasy.</p>
+              <p>To complete this workshop, finish the provided tasks to your best knowledge.</p>
             </div><!-- /.panel-body -->
           </div><!-- /.panel-collapse -->
         </div><!-- /.panel -->
         <div class="panel panel-default">
           <div class="panel-heading" role="tab" id="accordion-task-1-heading">
             <button type="button" class="task-checker" id="check-task-1"></button>
-            <a class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#accordion-task-1">1. Prerequisites</a>
+            <a class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#accordion-task-1">Prerequisites</a>
           </div><!-- /.panel-heading -->
           <div id="accordion-task-1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-task-1-heading">
             <div class="panel-body">
@@ -48,7 +47,7 @@
                 <p>Maven is used to simplify the build process tremendously.</p></li>
                 <li><p><strong><a href="http://wildfly.org/downloads/" target="_blank" title="Wildfly 8.1.0 Final">Wildfly 8.1.0 Final</a> Application Server</strong></p>
                 <p>Wildfly is the application server for which the example application used in this workshop has been developed. It is highly recommended to stick to this server. After the installation, you have to <a href="http://blog.arungupta.me/2013/12/netbeans8-and-wildfly8-techtip-6/" target="_blank" title="NetBeans 8 and Wildfly 8">configure NetBeans to use Wildfly</a>.</p></li>
-                <li><p><strong>Check out our <a href="#" target="_blank">GitHub repository</a></strong></p>
+                <li><p><strong>Check out our <a href="https://github.com/vwochnik/jee-workshop" target="_blank">GitHub repository</a></strong></p>
                 <p>The repository contains the example application for this workshop.</p></li>
               </ol>
             </div><!-- /.panel-body -->
@@ -57,43 +56,154 @@
         <div class="panel panel-default">
           <div class="panel-heading" role="tab" id="accordion-task-2-heading">
             <button type="button" class="task-checker" id="check-task-2"></button>
-            <a class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#accordion-task-2">2. Getting Started</a>
+            <a class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#accordion-task-2">GET category by ID</a>
           </div><!-- /.panel-heading -->
           <div id="accordion-task-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-task-2-heading">
             <div class="panel-body">
-              <h2>Getting Started</h2>
-              <p>First, execute the following command to set up the working directory to the first step:</p>
+              <h2>GET category by ID</h2>
+              <p>Set up the repository for the task by executing this command:</p>
               <pre>$ git checkout -f step-0</pre>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis beatae laboriosam amet sequi, tempore suscipit sapiente esse harum minima tenetur eligendi labore atque perferendis perspiciatis voluptatum, aut nam maxime necessitatibus?</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis beatae laboriosam amet sequi, tempore suscipit sapiente esse harum minima tenetur eligendi labore atque perferendis perspiciatis voluptatum, aut nam maxime necessitatibus?</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis beatae laboriosam amet sequi, tempore suscipit sapiente esse harum minima tenetur eligendi labore atque perferendis perspiciatis voluptatum, aut nam maxime necessitatibus?</p>
-            <span class="glyphicon glyphicon-ok"></span>
+              <h3>Task description</h3>
+              <p>Implement the single entity <code>GET</code> action in the <code>Category</code> REST resource class and service.</p>
+              <h3>Detailed description</h3>
+              <p>First, implement the <code>CategoryService::get(id)</code> method. This method queries the <code>CategoryRepository</code> for a <code>Category</code> object with a specific ID and then returns a <code>CategoryRepresentation</code> derived from the <code>Category</code> object.</p>
+              <p>If you are unsure how to implement this method, look into <code>AccountService::get(id)</code>. This method is already implemented.</p>
+              <p>Next, implement <code>CategoryResource::find(id)</code> which delegates to <code>CategoryService::get(id)</code>.</p>
+              <h3>Remarks</h3>
+              <p>Action methods in REST resource classes delegate to corresponding methods in service classes for better code readability and separation of concerns. The only purpose of the REST resource classes is to expose the corresponding services through a REST-interface. The services contain the business logic.</p>
             </div><!-- /.panel-body -->
           </div><!-- /.panel-collapse -->
         </div><!-- /.panel -->
-        <!--
-
-1. Implement the DELETE actions of Task and Category in the resource and service classes.
-
-2. Implement the UPDATE action of Task resource and service
-
-3. Implement the GET task list action of Task resource and service. look into category for help
-
-4. Implement the Exception interceptor JSON serialization getter method.
-
-5. Implement the Category GET by id method in the resource and service classes.
-
-6. Implement the Category service mapper methods.
-
-- - ADVANCED
-
-Change database to a RDBMS
-
-Implement Session service and resource
-
-Implement authorization interceptor
-
-        -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="accordion-task-3-heading">
+            <button type="button" class="task-checker" id="check-task-3"></button>
+            <a class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#accordion-task-3">Category mapper methods</a>
+          </div><!-- /.panel-heading -->
+          <div id="accordion-task-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-task-3-heading">
+            <div class="panel-body">
+              <h2>Category mapper methods</h2>
+              <p>Set up the repository for the task by executing this command:</p>
+              <pre>$ git checkout -f step-1</pre>
+              <h3>Task description</h3>
+              <p>Implement the representation mapper methods for <code>CategoryService</code>.</p>
+              <h3>Detailed description</h3>
+              <p>Implement the <code>CategoryService::model()</code> and <code>CategoryService::representation()</code> methods which map the <code>Category</code> domain object to the representation object and vice-versa.</p>
+              <h3>Remarks</h3>
+              <p>Domain objects (<code>Account</code>, <code>Category</code> and <code>Task</code>) are stored in the database and are thus JPA-annotated. However, they are not served through the REST resources as the actual entities. This is because the domain objects have cross-relationships which are not supposed to be exposed through the REST interface.</p>
+              <p>Therefore, domain objects are mapped to representation objects which hold all necessary information but lack relationships. Instead, relationships are represented by an ID-reference. The user of the REST interface can then request those referenced entities if desired.</p>
+            </div><!-- /.panel-body -->
+          </div><!-- /.panel-collapse -->
+        </div><!-- /.panel -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="accordion-task-4-heading">
+            <button type="button" class="task-checker" id="check-task-4"></button>
+            <a class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#accordion-task-4">The Exception interceptor</a>
+          </div><!-- /.panel-heading -->
+          <div id="accordion-task-4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-task-4-heading">
+            <div class="panel-body">
+              <h2>The Exception interceptor</h2>
+              <p>Set up the repository for the task by executing this command:</p>
+              <pre>$ git checkout -f step-2</pre>
+              <h3>Task description</h3>
+              <p>Implement the JSON serialization getter in the <code>ResourceExceptionMapper::ExceptionEntity</code> class.</p>
+              <h3>Detailed description</h3>
+              <p>The <code>ExceptionEntity</code> class is serialized into JSON. Therefore, it needs getters for every property which is later serialized. Create and implement a <code>ExceptionEntity::getMessage()</code> method.</p>
+              <h3>Remarks</h3>
+              <p>Every time an exception occurs server-side, the exception interceptor converts the exception to JSON which is then served to the user of the REST interface. This is necessary, because otherwise the user of the REST interface would be presented with the default exception output page of the application server which is not JSON and thus cannot be parsed as easily.</p>
+            </div><!-- /.panel-body -->
+          </div><!-- /.panel-collapse -->
+        </div><!-- /.panel -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="accordion-task-5-heading">
+            <button type="button" class="task-checker" id="check-task-5"></button>
+            <a class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#accordion-task-5">GET all tasks</a>
+          </div><!-- /.panel-heading -->
+          <div id="accordion-task-5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-task-5-heading">
+            <div class="panel-body">
+              <h2>GET all tasks</h2>
+              <p>Set up the repository for the task by executing this command:</p>
+              <pre>$ git checkout -f step-3</pre>
+              <h3>Task description</h3>
+              <p>Implement the entity list GET method in the <code>Task</code> REST resource class and service.</p>
+              <h3>Detailed description</h3>
+              <p>First, implement the <code>TaskService::getAll(accountId)</code> method. This method first retrieves the corresponding <code>Account</code> object from the <code>AccountRepository</code>. If the <code>Account</code> does not exist, an <code>InvalidQueryException</code> should be thrown. Then, a list of <code>Task</code> objects is retrieved from the <code>TaskRepository</code> which is then mapped to a list of representation objects and returned.</p>
+              <p>If you are unsure how to implement this method, look into <code>CategoryService::getAll(accountId)</code>. This method is already implemented.</p>
+              <p>Next, implement <code>TaskResource::findAll(accountId)</code> which delegates to <code>TaskService::getAll(accountId)</code>.</p>
+            </div><!-- /.panel-body -->
+          </div><!-- /.panel-collapse -->
+        </div><!-- /.panel -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="accordion-task-6-heading">
+            <button type="button" class="task-checker" id="check-task-6"></button>
+            <a class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#accordion-task-6">UPDATE task</a>
+          </div><!-- /.panel-heading -->
+          <div id="accordion-task-6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-task-6-heading">
+            <div class="panel-body">
+              <h2>UPDATE task</h2>
+              <p>Set up the repository for the task by executing this command:</p>
+              <pre>$ git checkout -f step-4</pre>
+              <h3>Task description</h3>
+              <p>Implement the entity UPDATE method in the <code>Task</code> REST resource class and service.</p>
+              <h3>Detailed description</h3>
+              <p>First, implement the <code>TaskService::update(id, repr)</code> method. This method converts the representation object into a domain object, saves the object in the repository, and then returns the representation object.</p>
+              <p>If you are unsure how to implement this method, look into <code>CategoryService::update(id, repr)</code>. This method is already implemented.</p>
+              <p>Next, implement <code>TaskResource::update(id, task)</code> which delegates to <code>TaskService::update(id, repr)</code>.</p>
+            </div><!-- /.panel-body -->
+          </div><!-- /.panel-collapse -->
+        </div><!-- /.panel -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="accordion-task-7-heading">
+            <button type="button" class="task-checker" id="check-task-7"></button>
+            <a class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#accordion-task-7">DELETE category and task</a>
+          </div><!-- /.panel-heading -->
+          <div id="accordion-task-7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-task-7-heading">
+            <div class="panel-body">
+              <h2>DELETE category and task</h2>
+              <p>Set up the repository for the task by executing this command:</p>
+              <pre>$ git checkout -f step-5</pre>
+              <h3>Task description</h3>
+              <p>Implement the entity DELETE methods in the <code>Category</code> and <code>Task</code> REST resource class and service.</p>
+              <h3>Detailed description</h3>
+              <p>First, implement the <code>CategoryService::delete(id)</code> and <code>TaskService::delete(id)</code> methods which simply instruct the repository to delete the object with the referenced ID.</p>
+              <p>Next, implement <code>CategoryResource::delete(id)</code> and <code>TaskResource::delete(id)</code> which delegate to <code>CategoryService::delete(id)</code> and <code>TaskService::delete(id)</code>, respectively.</p>
+            </div><!-- /.panel-body -->
+          </div><!-- /.panel-collapse -->
+        </div><!-- /.panel -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="accordion-task-8-heading">
+            <button type="button" class="task-checker" id="check-task-8"></button>
+            <a class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#accordion-task-8">Deploy and test</a>
+          </div><!-- /.panel-heading -->
+          <div id="accordion-task-8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-task-8-heading">
+            <div class="panel-body">
+              <h2>Deploy and test</h2>
+              <p>Set up the repository for the task by executing this command:</p>
+              <pre>$ git checkout -f step-6</pre>
+              <h3>Task description</h3>
+              <p>Deploy the application and test it using the provided <a href="/testclient/" target="_blank" title="Test client">client application</a>.</p>
+              <h3>Detailed description</h3>
+              <p>Build and deploy the example application on the Wildfly Application Server. When done successfully, the application should be accessible through port <code>8080</code> on the local machine.</p>
+              <p>Then, open the <a href="/testclient/" target="_blank" title="Test client">client application</a> in your browser. Add and select an account. You can now start to create categories and tasks.</p>
+            </div><!-- /.panel-body -->
+          </div><!-- /.panel-collapse -->
+        </div><!-- /.panel -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="accordion-task-9-heading">
+            <button type="button" class="task-checker" id="check-task-9"></button>
+            <a class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#accordion-task-9">Bonus tasks</a>
+          </div><!-- /.panel-heading -->
+          <div id="accordion-task-9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-task-9-heading">
+            <div class="panel-body">
+              <h2>Bonus tasks</h2>
+              <p>If you have completed all provided tasks and you still have time, here are a few additional tasks you can do:</p>
+              <ol>
+              <li><p>Change the underlaying database system to use PostgreSQL or MySQL. You first have to install the RDBMS on your system, of course.</p></li>
+              <li><p>Implement an authorization interceptor which checks for an <code>Authorization</code> HTTP header with valid <code>Account</code> credentials.</p></li>
+              <li><p>Implement <code>Session</code> service, representation and REST resource classes. Optionally, you can also change the authorization interceptor to accept sessions as well.</p></li>
+              </ol>
+            </div><!-- /.panel-body -->
+          </div><!-- /.panel-collapse -->
+        </div><!-- /.panel -->
       </div><!-- /.panel-group -->
       <div class="clearfix">
         <ul class="list-inline pull-right">
