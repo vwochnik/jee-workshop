@@ -58,13 +58,33 @@
         <div class="panel panel-default">
           <div class="panel-heading" role="tab" id="accordion-task-2-heading">
             <button type="button" class="task-checker" id="check-task-2"></button>
-            <a class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#accordion-task-2">GET category by ID</a>
+            <a class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#accordion-task-2">Category mapper methods</a>
           </div><!-- /.panel-heading -->
           <div id="accordion-task-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-task-2-heading">
             <div class="panel-body">
-              <h2>GET category by ID</h2>
+              <h2>Category mapper methods</h2>
               <p>Set up the repository for the task by executing this command:</p>
               <pre>$ git checkout -f step-0</pre>
+              <h3>Task description</h3>
+              <p>Implement the representation mapper methods for <code>CategoryService</code>.</p>
+              <h3>Detailed description</h3>
+              <p>Implement the <code>CategoryService::model()</code> and <code>CategoryService::representation()</code> methods which map the <code>Category</code> domain object to the representation object and vice-versa.</p>
+              <h3>Remarks</h3>
+              <p>Domain objects (<code>Account</code>, <code>Category</code> and <code>Task</code>) are stored in the database and are thus JPA-annotated. However, they are not served through the REST resources as the actual entities. This is because the domain objects have cross-relationships which are not supposed to be exposed through the REST interface.</p>
+              <p>Therefore, domain objects are mapped to representation objects which hold all necessary information but lack relationships. Instead, relationships are represented by an ID-reference. The user of the REST interface can then request those referenced entities if desired.</p>
+            </div><!-- /.panel-body -->
+          </div><!-- /.panel-collapse -->
+        </div><!-- /.panel -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="accordion-task-3-heading">
+            <button type="button" class="task-checker" id="check-task-3"></button>
+            <a class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#accordion-task-3">GET category by ID</a>
+          </div><!-- /.panel-heading -->
+          <div id="accordion-task-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-task-3-heading">
+            <div class="panel-body">
+              <h2>GET category by ID</h2>
+              <p>Set up the repository for the task by executing this command:</p>
+              <pre>$ git checkout -f step-1</pre>
               <h3>Task description</h3>
               <p>Implement the single entity <code>GET</code> action in the <code>Category</code> REST resource class and service.</p>
               <h3>Detailed description</h3>
@@ -73,26 +93,6 @@
               <p>Next, implement <code>CategoryResource::find(id)</code> which delegates to <code>CategoryService::get(id)</code>.</p>
               <h3>Remarks</h3>
               <p>Action methods in REST resource classes delegate to corresponding methods in service classes for better code readability and separation of concerns. The only purpose of the REST resource classes is to expose the corresponding services through a REST-interface. The services contain the business logic.</p>
-            </div><!-- /.panel-body -->
-          </div><!-- /.panel-collapse -->
-        </div><!-- /.panel -->
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="accordion-task-3-heading">
-            <button type="button" class="task-checker" id="check-task-3"></button>
-            <a class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#accordion-task-3">Category mapper methods</a>
-          </div><!-- /.panel-heading -->
-          <div id="accordion-task-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="accordion-task-3-heading">
-            <div class="panel-body">
-              <h2>Category mapper methods</h2>
-              <p>Set up the repository for the task by executing this command:</p>
-              <pre>$ git checkout -f step-1</pre>
-              <h3>Task description</h3>
-              <p>Implement the representation mapper methods for <code>CategoryService</code>.</p>
-              <h3>Detailed description</h3>
-              <p>Implement the <code>CategoryService::model()</code> and <code>CategoryService::representation()</code> methods which map the <code>Category</code> domain object to the representation object and vice-versa.</p>
-              <h3>Remarks</h3>
-              <p>Domain objects (<code>Account</code>, <code>Category</code> and <code>Task</code>) are stored in the database and are thus JPA-annotated. However, they are not served through the REST resources as the actual entities. This is because the domain objects have cross-relationships which are not supposed to be exposed through the REST interface.</p>
-              <p>Therefore, domain objects are mapped to representation objects which hold all necessary information but lack relationships. Instead, relationships are represented by an ID-reference. The user of the REST interface can then request those referenced entities if desired.</p>
             </div><!-- /.panel-body -->
           </div><!-- /.panel-collapse -->
         </div><!-- /.panel -->
