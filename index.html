@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JEE Workshop</title>
+    <title>RESTful Application Stack with Spring/RestEasy</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <style type="text/css">.panel-body h2{margin-top:0}.task-checker{cursor:pointer;outline:none;background:none;border:none}</style>
+    <style type="text/css">.panel-body h2{margin-top:0}.task-checker{cursor:pointer;outline:none;background:none;border:none}.pull-left{margin-right:0.8em}.pull-right{margin-left:0.8em}</style>
   </head>
   <body style="background:#eee">
     <div class="container">
-      <h1 class="page-header">Java Rest Workshop <small>Using RestEasy, Spring and JPA/Hibernate</small></h1>
+      <h1 class="page-header">RESTful Application Stack <small>with Spring/RestEasy</small></h1>
       <p class="lead">This website will guide you through the completion of the workshop. After completing a task, mark it as done by clicking on the box next to the title.</p>
       <p class="well">Questions regarding the workshop can be asked at the time of the workshop or by emailing Vincent, Jens or Nils.</p>
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -19,9 +19,11 @@
           <div id="accordion-intro" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="accordion-intro-heading">
             <div class="panel-body">
               <h2>Introduction</h2>
-              <img class="img-responsive pull-right" src="web-app-stack.png" srcset="web-app-stack.png 1x, web-app-stack-2x.png 2x" alt="Web Application Stack" />
-              <p>This workshop shows how to implement a REST-based web application using Spring with Hibernate and RestEasy.</p>
-              <p>To complete this workshop, finish the provided tasks to your best knowledge.</p>
+              <p>This workshop teaches the workflow of using Spring and RestEasy to create a RESTful server-side application. The example application (Task Manager) is pre-configured and fully functional. All you have to do is follow the instructions below.</p>
+              <p>You can use the provided client application to test the REST API, but of course you can also use a tool like <a href="https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm" target="_blank" alt="Postman">Postman.</a></p>
+              <a href="presentation.pdf" target="_blank" class="thumbnail pull-left" title="RESTful Application Stack with Spring/RestEasy"><img src="presentation-thumb.png" alt="RESTful Application Stack with Spring/RestEasy" class="img-responsive"></a>
+              <h3>Presentation</h3>
+              <p>You can access the workshop presentation online. Just click on the thumbnail to download or open the PDF in your browser.</p>
             </div><!-- /.panel-body -->
           </div><!-- /.panel-collapse -->
         </div><!-- /.panel -->
@@ -35,7 +37,7 @@
               <h2>Prerequisites</h2>
               <p>You have the choice to either use the provided virtual machine with all the requirements installed or to install them manually on your platform of choice.</p>
               <h3>Virtual Machine</h3>
-              <p><a href="#" target="_blank">Download</a> the virtual machine and then import it using either <a href="https://virtualbox.org/" target="_blank" title="VirtualBox">VirtualBox</a> or the virtualization software of your choice.</p>
+              <p>The virtual machine will be provided during the workshop. Just import it using the virtualization environment of your choise.</p>
               <h3>Native Installation</h3>
               <p>In order to take part in our workshop, make sure to have the following requirements set up before starting the workshop.</p>
               <ol>
@@ -180,10 +182,10 @@
               <p>Set up the repository for the task by executing this command:</p>
               <pre>$ git checkout -f step-6</pre>
               <h3>Task description</h3>
-              <p>Deploy the application and test it using the provided <a href="/testclient/" target="_blank" title="Test client">client application</a>.</p>
+              <p>Deploy the application and test it using the provided <a href="testclient/" target="_blank" title="Test client">client application</a>.</p>
               <h3>Detailed description</h3>
               <p>Build and deploy the example application on the Wildfly Application Server. When done successfully, the application should be accessible through port <code>8080</code> on the local machine.</p>
-              <p>Then, open the <a href="/testclient/" target="_blank" title="Test client">client application</a> in your browser. Add and select an account. You can now start to create categories and tasks.</p>
+              <p>Then, open the <a href="testclient/" target="_blank" title="Test client">client application</a> in your browser. Add and select an account. You can now start to create categories and tasks.</p>
             </div><!-- /.panel-body -->
           </div><!-- /.panel-collapse -->
         </div><!-- /.panel -->
